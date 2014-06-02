@@ -4,6 +4,9 @@ Invent::Application.routes.draw do
 
 
 
+  get "workplace/index"
+  get "room/index"
+  get "territory/index"
   resources :login, :path => 'login/(:action)(.:format)'
 
 
