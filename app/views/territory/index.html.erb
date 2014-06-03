@@ -13,16 +13,19 @@
 
   <div class="panel-body">
 
-    <div id="pager" class="pager" style="margin-top: 10px;">
+    <div id="pager" class="pager" style="margin-top: -10px; margin-bottom: 5px;">
       <form>
-        <img src="/images/pager/first.png" class="first"/>
-        <img src="/images/pager/prev.png" class="prev"/>
+        <%= image_tag "first.png", :class => "first" %>
+        <%= image_tag "prev.png", :class => "prev" %>
         <input type="text" class="pagedisplay"/>
-        <img src="/images/pager/next.png" class="next"/>
-        <img src="/images/pager/last.png" class="last"/>
+        <%= image_tag "next.png", :class => "next" %>
+        <%= image_tag "last.png", :class => "last" %>
         <select class="pagesize">
-          <option selected="selected"  value="50">50</option>
-          <option value="100">100</option>
+          <option selected="selected"  value="10">10</option>
+
+          <option value="20">20</option>
+          <option value="30">30</option>
+          <option  value="40">40</option>
         </select> Rows
       </form>
     </div>
