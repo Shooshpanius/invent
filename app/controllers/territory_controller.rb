@@ -8,4 +8,9 @@ class TerritoryController < ApplicationController
       render layout: false
   end
 
+  def srv_territory_new_save
+    render nothing: true
+  end
+
+
 end

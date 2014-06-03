@@ -8,19 +8,19 @@
       </div>
       <div class="modal-body">
 
-        <form class="form-horizontal" role="form" id="territory_new">
+        <form class="form-horizontal" role="form" id="territory_new" name="territory_new">
 
           <div class="form-group">
-            <label for="name" class="col-sm-2 control-label">Наименование</label>
+            <label for="territory_name" class="col-sm-2 control-label">Наименование</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="name" placeholder="Наименование">
+              <input type="text" class="form-control" id="territory_name" name="territory_name" placeholder="Наименование">
             </div>
           </div>
 
           <div class="form-group">
-            <label for="address" class="col-sm-2 control-label">Адрес</label>
+            <label for="territory_address" class="col-sm-2 control-label">Адрес</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="address" placeholder="Адрес">
+              <input type="text" class="form-control" id="territory_address" name="territory_address" placeholder="Адрес">
             </div>
           </div>
 
@@ -28,7 +28,7 @@
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-success" id="phone_edit_save">Сохранить</button>
+        <button type="button" class="btn btn-success" onclick="territory_new_save()">Сохранить</button>
         <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
       </div>
     </div>

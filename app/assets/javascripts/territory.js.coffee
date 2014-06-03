@@ -11,3 +11,21 @@
     success: (msg) ->
       $("#territory_new_dialog").html msg
     false
+
+@territory_new_save = () ->
+
+  $("#territory_new").validate
+    rules:
+      territory_name:
+        required: true
+      territory_address:
+        required: true
+    errorClass: "input_error"
+    errorElement: "em"
+    messages:
+      name: ""
+      address: "*"
+
+    submitHandler: () ->
+      alert '222'
+
