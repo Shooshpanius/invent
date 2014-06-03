@@ -41,6 +41,6 @@
 
 
 $(document).ready ->
-  $("#tbl_territories").tablesorter().tablesorterPager container: $("#pager")
+  $("#tbl_territories").tablesorter().tablesorterPager container: $("#pager"), size: 20
   return
 
