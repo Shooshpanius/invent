@@ -1,9 +1,12 @@
+<%= javascript_include_tag "main" %>
+<%= javascript_include_tag "territory" %>
+
 <div class="panel panel-info">
 
   <div class="panel-heading">
     <div class="panel-title">
       Территории, здания
-        <button href="#" class="btn btn-primary btn-xs pull-right">Добавить</button>
+      <a class="btn btn-primary btn-xs pull-right" role="button" data-toggle="modal" data-target="#mTerritoryNew" onclick="territory_new_show()"><span class="glyphicon glyphicon-plus"></span></a>
     </div>
     <div class="clearfix"></div>
 
@@ -14,3 +17,5 @@
   </div>
 
 </div>
+
+<div id="territory_new_dialog"></div>
