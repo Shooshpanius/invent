@@ -39,6 +39,8 @@ ActiveRecord::Schema.define(version: 20140602174825) do
   end
 
   create_table "territories", force: true do |t|
+    t.string   "name"
+    t.string   "address"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

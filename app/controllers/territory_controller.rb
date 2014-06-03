@@ -1,4 +1,7 @@
 class TerritoryController < ApplicationController
+
+  before_filter :is_login
+
   def index
   end
 
@@ -9,8 +12,20 @@ class TerritoryController < ApplicationController
   end
 
   def srv_territory_new_save
-    render text: '222'
-    # render nothing: true
+    Territory.create(
+        name: 	params[:territory_name],
+        address: 	params[:territory_address]
+    )
+    render nothing: true
+  end
+
+
+
+  private
+  def is_login
+    if !session[:is_login]
+      redirect_to "/login"
+    end
   end
 
 
