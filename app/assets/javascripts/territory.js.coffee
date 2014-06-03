@@ -36,7 +36,7 @@
         data: queryString
         success: (msg) ->
           $("#mTerritoryNew").modal 'hide'
-
+          location.reload()
       false
 
 
