@@ -5,3 +5,17 @@
 body .modal-dialog {
   width: 750px;
 }
+
+.tablesorter .tablesorter-filter-row td:nth-child(1n) .tablesorter-filter {
+  width: 0px;
+}
+.tablesorter .tablesorter-filter-row td:nth-child(2) .tablesorter-filter {
+  width: 180px;
+}
+.tablesorter .tablesorter-filter-row td:nth-child(3n) .tablesorter-filter {
+  width: 180px;
+}
+
+.tablesorter .tablesorter-filter-row td:nth-child(4n) .tablesorter-filter {
+  width: 0px;
+}

@@ -32,12 +32,16 @@
 
     <table class="table table-bordered table-condensed tablesorter" id="tbl_territories" name="tbl_territories">
       <thead>
+
       <tr>
-        <th class="col-md-1">#</th>
-        <th>Наименование</th>
-        <th>Адрес</th>
-        <th class="col-md-1">Действия</th>
+        <th class="first-name" ">#</th>
+        <th data-placeholder="" class="filter-match">Наименование</th>
+        <th data-placeholder="" class="filter-match">Адрес</th>
+        <th data-placeholder="" class="filter-match ">Действия</th>
       </tr>
+
+
+
       </thead>
       <tbody>
       <% @form_data[:territories].each.with_index do |territory, index| %>

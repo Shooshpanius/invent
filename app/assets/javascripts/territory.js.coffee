@@ -41,6 +41,25 @@
 
 
 $(document).ready ->
-  $("#tbl_territories").tablesorter().tablesorterPager container: $("#pager"), size: 20
+  $("#tbl_territories").tablesorter(
+    headers:
+      0:
+        filter: false
+      3:
+        filter: false
+        sorter: false
+    widthFixed : true
+    widgets: [
+      "zebra"
+      "filter"
+    ]
+
+
+    widgetOptions:
+      filter_hideFilters: true
+      filter_childRows: false
+      filter_startsWith: false
+
+  ).tablesorterPager container: $("#pager"), size: 20
   return
 
