@@ -50,3 +50,4 @@ gem 'therubyracer', :platforms => :ruby
 gem 'bootstrap-sass'
 gem 'jquery-ui-rails'
 gem 'jquery-tablesorter'
+

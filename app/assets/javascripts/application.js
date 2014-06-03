@@ -19,4 +19,5 @@
 //= require bootstrap
 //= require jquery.maskedinput
 //= require jquery-tablesorter
+//= require jquery-tablesorter/addons/pager/jquery.tablesorter.pager
 //= require_self

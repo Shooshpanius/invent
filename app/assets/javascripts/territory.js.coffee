@@ -38,3 +38,9 @@
           $("#mTerritoryNew").modal 'hide'
 
       false
+
+
+$(document).ready ->
+  $("#tbl_territories").tablesorter().tablesorterPager container: $("#pager")
+  return
+
