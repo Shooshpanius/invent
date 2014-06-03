@@ -9,10 +9,23 @@
       <a class="btn btn-primary btn-xs pull-right" role="button" data-toggle="modal" data-target="#mTerritoryNew" onclick="territory_new_show()"><span class="glyphicon glyphicon-plus"></span></a>
     </div>
     <div class="clearfix"></div>
-
   </div>
 
   <div class="panel-body">
+
+    <div id="pager" class="pager" style="margin-top: 10px;">
+      <form>
+        <img src="/images/pager/first.png" class="first"/>
+        <img src="/images/pager/prev.png" class="prev"/>
+        <input type="text" class="pagedisplay"/>
+        <img src="/images/pager/next.png" class="next"/>
+        <img src="/images/pager/last.png" class="last"/>
+        <select class="pagesize">
+          <option selected="selected"  value="50">50</option>
+          <option value="100">100</option>
+        </select> Rows
+      </form>
+    </div>
 
     <table class="table table-bordered table-condensed tablesorter" id="tbl_territories" name="tbl_territories">
       <thead>
@@ -29,8 +42,6 @@
             <td><%= territory.id %></td>
             <td><%= territory.name %></td>
             <td><%= territory.address%></td>
-
-
             <td>
               <a href="#" type="button" class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-edit"></i></a>
               <a href="#" type="button" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i></a>
