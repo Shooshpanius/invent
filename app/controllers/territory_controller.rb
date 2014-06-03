@@ -9,7 +9,8 @@ class TerritoryController < ApplicationController
   end
 
   def srv_territory_new_save
-    render nothing: true
+    render text: '222'
+    # render nothing: true
   end
 
 

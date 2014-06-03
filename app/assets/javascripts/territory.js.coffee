@@ -20,12 +20,21 @@
         required: true
       territory_address:
         required: true
+
     errorClass: "input_error"
     errorElement: "em"
     messages:
-      name: ""
-      address: "*"
+      territory_name: ""
+      territory_address: ""
 
-    submitHandler: () ->
-      alert '222'
+    submitHandler: (form) ->
+      queryString = $("#territory_new").serialize()
+      $.ajax
+        url: "/territory/srv_territory_new_save"
+        type: "POST"
+        async: false
+        data: queryString
+        success: (msg) ->
+          $("#mTerritoryNew").modal 'hide'
 
+      false
