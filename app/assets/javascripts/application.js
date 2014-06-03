@@ -18,4 +18,5 @@
 //= require additional-methods
 //= require bootstrap
 //= require jquery.maskedinput
+//= require jquery-tablesorter
 //= require_self

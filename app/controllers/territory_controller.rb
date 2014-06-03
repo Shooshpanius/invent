@@ -3,6 +3,10 @@ class TerritoryController < ApplicationController
   before_filter :is_login
 
   def index
+    territories = Territory.all
+    @form_data = {
+        territories: territories
+    }
   end
 
 
