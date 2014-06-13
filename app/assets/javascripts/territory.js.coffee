@@ -22,7 +22,6 @@
       $("#territory_edit_dialog").html msg
     false
 
-
 @territory_delete = (territory_id) ->
   if confirm('Удалить территорию?')
     $.ajax
@@ -34,22 +33,18 @@
         alert(msg)
       false
 
-
 @territory_new_save = () ->
-
   $("#territory_new").validate
     rules:
       territory_name:
         required: true
       territory_address:
         required: true
-
     errorClass: "input_error"
     errorElement: "em"
     messages:
       territory_name: ""
       territory_address: ""
-
     submitHandler: (form) ->
       queryString = $("#territory_new").serialize()
       $.ajax
@@ -62,6 +57,32 @@
           location.reload()
       false
 
+@territory_edit_save = () ->
+  $("#territory_edit").validate
+    rules:
+      territory_id:
+        required: true
+      territory_name:
+        required: true
+      territory_address:
+        required: true
+    errorClass: "input_error"
+    errorElement: "em"
+    messages:
+      territory_id: ""
+      territory_name: ""
+      territory_address: ""
+    submitHandler: (form) ->
+      queryString = $("#territory_edit").serialize()
+      $.ajax
+        url: "/territory/srv_territory_edit_save"
+        type: "POST"
+        async: false
+        data: queryString
+        success: (msg) ->
+          $("#mTerritoryEdit").modal 'hide'
+          location.reload()
+      false
 
 $(document).ready ->
   $("#tbl_territories").tablesorter(
