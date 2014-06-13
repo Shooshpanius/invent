@@ -14,6 +14,14 @@ class TerritoryController < ApplicationController
       render layout: false
   end
 
+  def srv_territory_edit_show
+    @form_data = {
+        a1: 'aaa',
+        territory_edit: Territory.find(params[:territory_id])
+    }
+    render layout: false
+  end
+
   def srv_territory_new_save
     Territory.create(
         name: 	params[:territory_name],

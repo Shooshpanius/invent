@@ -4,16 +4,16 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="mTerritoryEditLabel">Новая территория, здание</h4>
+        <h4 class="modal-title" id="mTerritoryEditLabel">Редактировать территорию</h4>
       </div>
       <div class="modal-body">
-
+        <div><% params[:territory_id] %></div>
         <form class="form-horizontal" role="form" id="territory_new" name="territory_new">
             <fieldset>
               <div class="form-group">
                 <label for="territory_name" class="col-sm-2 control-label">Наименование</label>
                 <div class="col-sm-10">
-                  <input type="text" class="form-control" id="territory_name" name="territory_name" placeholder="Наименование">
+                  <input type="text" class="form-control" id="territory_name" name="territory_name" placeholder="Наименование" value="<% @form_data[:a1] %>">
                 </div>
               </div>
 

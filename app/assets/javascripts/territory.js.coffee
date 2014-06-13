@@ -12,6 +12,17 @@
       $("#territory_new_dialog").html msg
     false
 
+@territory_edit_show = (territory_id) ->
+  $.ajax
+    url: '/territory/srv_territory_edit_show'
+    type: 'POST'
+    async: false
+    data: {territory_id: territory_id}
+    success: (msg) ->
+      $("#territory_edit_dialog").html msg
+    false
+
+
 @territory_delete = (territory_id) ->
   if confirm('Удалить территорию?')
     $.ajax
