@@ -35,20 +35,17 @@
       false
 
 @room_new_save = () ->
-
   $("#room_new").validate
     rules:
       room_name:
         required: true
       territories:
         required: true
-
     errorClass: "input_error"
     errorElement: "em"
     messages:
       room_name: ""
       territories: ""
-
     submitHandler: (form) ->
       queryString = $("#room_new").serialize()
       $.ajax
@@ -58,6 +55,33 @@
         data: queryString
         success: (msg) ->
           $("#mRoomNew").modal 'hide'
+          location.reload()
+      false
+
+@room_edit_save = () ->
+  $("#room_edit").validate
+    rules:
+      room_id:
+        required: true
+      room_name:
+        required: true
+      room_territory:
+        required: true
+    errorClass: "input_error"
+    errorElement: "em"
+    messages:
+      room_id: ""
+      room_name: ""
+      room_territory: ""
+    submitHandler: (form) ->
+      queryString = $("#room_edit").serialize()
+      $.ajax
+        url: "/room/srv_room_edit_save"
+        type: "POST"
+        async: false
+        data: queryString
+        success: (msg) ->
+          $("#mRoomEdit").modal 'hide'
           location.reload()
       false
 

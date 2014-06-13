@@ -33,6 +33,15 @@ class RoomController < ApplicationController
     render nothing: true
   end
 
+  def srv_room_edit_save
+    Room.update(
+        params[:room_id],
+        name: 	params[:room_name],
+        territory_id: 	params[:room_territory]
+    )
+    render nothing: true
+  end
+
   def srv_room_delete
     begin
       Room.destroy(Room.find(params[:room_id]))
