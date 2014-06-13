@@ -1,3 +1,28 @@
 // Place all the styles related to the workplace controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body .modal-dialog {
+  width: 750px;
+}
+
+.tablesorter .tablesorter-filter-row td:nth-child(1n) .tablesorter-filter {
+  width: 0px;
+  visibility: hidden;
+}
+.tablesorter .tablesorter-filter-row td:nth-child(2) .tablesorter-filter {
+  width: 180px;
+  visibility: visible;
+}
+.tablesorter .tablesorter-filter-row td:nth-child(3n) .tablesorter-filter {
+  width: 180px;
+  visibility: visible;
+}.tablesorter .tablesorter-filter-row td:nth-child(4n) .tablesorter-filter {
+   width: 180px;
+   visibility: visible;
+ }
+
+.tablesorter .tablesorter-filter-row td:nth-child(5n) .tablesorter-filter {
+  width: 0px;
+  visibility: hidden;
+}
