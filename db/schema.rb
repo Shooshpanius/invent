@@ -34,6 +34,8 @@ ActiveRecord::Schema.define(version: 20140602174825) do
   end
 
   create_table "rooms", force: true do |t|
+    t.integer  "territory_id"
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

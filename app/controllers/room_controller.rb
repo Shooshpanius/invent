@@ -4,10 +4,16 @@ class RoomController < ApplicationController
 
 
   def index
-    rooms = Room.all
     @form_data = {
-        rooms: rooms
+        rooms: Room.all,
     }
+  end
+
+  def srv_room_new_show
+    @form_data = {
+        territories: Territory.all.map { |territoriy| [territoriy.name, territoriy.id] }
+    }
+    render layout: false
   end
 
 
