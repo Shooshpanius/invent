@@ -17,6 +17,14 @@ class RoomController < ApplicationController
     render layout: false
   end
 
+  def srv_room_edit_show
+    @form_data = {
+        room_edit: Room.find(params[:room_id]),
+        territories: Territory.all.map { |territory| [territory.name, territory.id] }
+    }
+    render layout: false
+  end
+
   def srv_room_new_save
     Room.create(
         name: 	params[:room_name],

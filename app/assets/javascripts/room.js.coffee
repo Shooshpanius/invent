@@ -12,6 +12,16 @@
       $("#room_new_dialog").html msg
     false
 
+@room_edit_show = (room_id) ->
+  $.ajax
+    url: '/room/srv_room_edit_show'
+    type: 'POST'
+    async: false
+    data: {room_id: room_id}
+    success: (msg) ->
+      $("#room_edit_dialog").html msg
+    false
+
 @room_delete = (room_id) ->
   if confirm('Удалить кабинет?')
     $.ajax
