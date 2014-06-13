@@ -38,3 +38,23 @@
           $("#mRoomNew").modal 'hide'
           location.reload()
       false
+
+$(document).ready ->
+  $("#tbl_rooms").tablesorter(
+    headers:
+      0:
+        filter: false
+      3:
+        filter: false
+        sorter: false
+    widthFixed : true
+    widgets: [
+      "zebra"
+      "filter"
+    ]
+    widgetOptions :
+      filter_hideFilters: true
+      filter_childRows: false
+      filter_startsWith: false
+
+  ).tablesorterPager container: $("#pager"), size: 20
