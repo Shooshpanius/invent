@@ -36,7 +36,8 @@
       <tr>
         <th class="first-name col-md-1">#</th>
         <th data-placeholder="" class="filter-match col-md-6">Наименование</th>
-        <th data-placeholder="" class="filter-match col-md-4">Помещение, кабинет</th>
+        <th data-placeholder="" class="filter-match col-md-2">Помещение, кабинет</th>
+        <th data-placeholder="" class="filter-match col-md-2">Территория</th>
         <th data-placeholder="" class="filter-match col-md-1">Действия</th>
       </tr>
 
@@ -47,6 +48,7 @@
             <td><%= workplace.id %></td>
             <td><%= workplace.name %></td>
             <td><%= workplace.room.name%></td>
+            <td><%= workplace.room.territory.name%></td>
             <td>
               <a href="#" type="button" class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-edit"></i></a>
               <a href="#" type="button" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i></a>
