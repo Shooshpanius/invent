@@ -1,3 +1,4 @@
+# encoding: utf-8
 class TerritoryController < ApplicationController
 
   before_filter :is_login
@@ -22,9 +23,12 @@ class TerritoryController < ApplicationController
   end
 
   def srv_territory_delete
-    Territory.delete(Territory.find(params[:territory_id]))
-
-    render nothing: true
+    begin
+      Territory.destroy(Territory.find(params[:territory_id]))
+      render text: 'Запись удалена'
+    rescue ActiveRecord::DeleteRestrictionError => e
+      render text: 'Удаление невозможно, есть связанные объекты'
+    end
   end
 
 

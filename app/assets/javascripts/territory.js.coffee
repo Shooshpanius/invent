@@ -20,7 +20,7 @@
       async: false
       data: {territory_id: territory_id}
       success: (msg) ->
-        alert("Запись удалена")
+        alert(msg)
       false
 
 

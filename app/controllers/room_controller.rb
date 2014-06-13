@@ -24,6 +24,15 @@ class RoomController < ApplicationController
     render nothing: true
   end
 
+  def srv_room_delete
+    begin
+      Room.destroy(Room.find(params[:room_id]))
+      render text: 'Запись удалена'
+    rescue ActiveRecord::DeleteRestrictionError => e
+      render text: 'Удаление невозможно, есть связанные объекты'
+    end
+  end
+
   private
   def is_login
     if !session[:is_login]

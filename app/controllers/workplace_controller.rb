@@ -25,6 +25,15 @@ class WorkplaceController < ApplicationController
     render nothing: true
   end
 
+  def srv_workplace_delete
+    begin
+      Workplace.destroy(Workplace.find(params[:workplace_id]))
+      render text: 'Запись удалена'
+    rescue ActiveRecord::DeleteRestrictionError => e
+      render text: 'Удаление невозможно, есть связанные объекты'
+    end
+  end
+
 
   private
   def is_login
