@@ -52,7 +52,7 @@
             <td><%= workplace.room.territory.name%></td>
             <td>
               <a href="#" type="button" class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-edit"></i></a>
-              <a href="#" type="button" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i></a>
+              <a href="#" type="button" class="btn btn-danger btn-xs" onclick="workplace_delete(<%= workplace.id %>)"><i class="glyphicon glyphicon-trash"></i></a>
             </td>
           </tr>
       <% end %>
