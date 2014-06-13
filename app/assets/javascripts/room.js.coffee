@@ -11,3 +11,30 @@
     success: (msg) ->
       $("#room_new_dialog").html msg
     false
+
+@room_new_save = () ->
+
+  $("#room_new").validate
+    rules:
+      room_name:
+        required: true
+      territories:
+        required: true
+
+    errorClass: "input_error"
+    errorElement: "em"
+    messages:
+      room_name: ""
+      territories: ""
+
+    submitHandler: (form) ->
+      queryString = $("#room_new").serialize()
+      $.ajax
+        url: "/room/srv_room_new_save"
+        type: "POST"
+        async: false
+        data: queryString
+        success: (msg) ->
+          $("#mRoomNew").modal 'hide'
+          location.reload()
+      false

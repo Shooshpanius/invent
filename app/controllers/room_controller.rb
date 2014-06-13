@@ -16,7 +16,13 @@ class RoomController < ApplicationController
     render layout: false
   end
 
-
+  def srv_room_new_save
+    Room.create(
+        name: 	params[:room_name],
+        territory_id: 	params[:territories]
+    )
+    render nothing: true
+  end
 
   private
   def is_login

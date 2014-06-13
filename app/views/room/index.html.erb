@@ -36,7 +36,7 @@
       <tr>
         <th class="first-name col-md-1">#</th>
         <th data-placeholder="" class="filter-match col-md-6">Наименование</th>
-        <th data-placeholder="" class="filter-match col-md-4">Адрес</th>
+        <th data-placeholder="" class="filter-match col-md-4">Территория</th>
         <th data-placeholder="" class="filter-match col-md-1">Действия</th>
       </tr>
 
@@ -46,7 +46,7 @@
           <tr id="r_<%= room.id %>">
             <td><%= room.id %></td>
             <td><%= room.name %></td>
-            <td><%= room.territory%></td>
+            <td><%= room.territory.name%></td>
             <td>
               <a href="#" type="button" class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-edit"></i></a>
               <a href="#" type="button" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i></a>
