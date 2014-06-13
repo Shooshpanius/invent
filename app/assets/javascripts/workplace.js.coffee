@@ -12,6 +12,18 @@
       $("#workplace_new_dialog").html msg
     false
 
+@workplace_delete = (workplace_id) ->
+  if confirm('Удалить рабочее место?')
+    $.ajax
+      url: '/workplace/srv_workplace_delete'
+      type: 'POST'
+      async: false
+      data: {workplace_id: workplace_id}
+      success: (msg) ->
+        alert(msg)
+      false
+
+
 @workplace_new_save = () ->
 
   $("#workplace_new").validate
