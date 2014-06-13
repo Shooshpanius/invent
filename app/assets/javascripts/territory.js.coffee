@@ -12,6 +12,18 @@
       $("#territory_new_dialog").html msg
     false
 
+@territory_delete = (territory_id) ->
+  if confirm('Удалить территорию?')
+    $.ajax
+      url: '/territory/srv_territory_delete'
+      type: 'POST'
+      async: false
+      data: {territory_id: territory_id}
+      success: (msg) ->
+        alert("Запись удалена")
+      false
+
+
 @territory_new_save = () ->
 
   $("#territory_new").validate

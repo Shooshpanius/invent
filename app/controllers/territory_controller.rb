@@ -9,8 +9,6 @@ class TerritoryController < ApplicationController
     }
   end
 
-
-
   def srv_territory_new_show
       render layout: false
   end
@@ -20,6 +18,12 @@ class TerritoryController < ApplicationController
         name: 	params[:territory_name],
         address: 	params[:territory_address]
     )
+    render nothing: true
+  end
+
+  def srv_territory_delete
+    Territory.delete(Territory.find(params[:territory_id]))
+
     render nothing: true
   end
 

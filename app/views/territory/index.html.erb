@@ -51,8 +51,8 @@
             <td><%= territory.name %></td>
             <td><%= territory.address%></td>
             <td>
-              <a href="#" type="button" class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-edit"></i></a>
-              <a href="#" type="button" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i></a>
+              <a href="#" type="button" class="btn btn-primary btn-xs" onclick="territory_edit_show(<%= territory.id %>)"><i class="glyphicon glyphicon-edit"></i></a>
+              <a href="#" type="button" class="btn btn-danger btn-xs" onclick="territory_delete(<%= territory.id %>)"><i class="glyphicon glyphicon-trash"></i></a>
             </td>
           </tr>
       <% end %>
