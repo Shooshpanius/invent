@@ -11,7 +11,7 @@ class RoomController < ApplicationController
 
   def srv_room_new_show
     @form_data = {
-        territories: Territory.all.map { |territoriy| [territoriy.name, territoriy.id] }
+        territories: Territory.all.map { |territory| [territory.name, territory.id] }
     }
     render layout: false
   end
