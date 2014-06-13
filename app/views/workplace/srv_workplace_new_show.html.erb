@@ -1,0 +1,36 @@
+
+<div class="modal fade" id="mWorkplaceNew" tabindex="-1" role="dialog" aria-labelledby="mWorkplaceNew" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="mRoomNewLabel">Новое рабочее место, размещение</h4>
+      </div>
+      <div class="modal-body">
+
+        <form class="form-horizontal" role="form" id="room_new" name="room_new">
+            <fieldset>
+              <div class="form-group">
+                <label for="workplace_name" class="col-sm-2 control-label">Наименование</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="workplace_name" name="workplace_name" placeholder="Наименование">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="workplace_room" class="col-sm-2 control-label">Помещение, кабинет</label>
+                <div class="col-sm-10">
+                  <%= select_tag(:rooms, options_for_select(@form_data[:rooms]) ) %>
+                </div>
+              </div>
+            </fieldset>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-success" onclick="room_new_save()">Сохранить</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div><
+</div>
