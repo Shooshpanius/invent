@@ -34,22 +34,18 @@
         location.reload()
       false
 
-
 @workplace_new_save = () ->
-
   $("#workplace_new").validate
     rules:
       workplace_name:
         required: true
       rooms:
         required: true
-
     errorClass: "input_error"
     errorElement: "em"
     messages:
       workplace_name: ""
       rooms: ""
-
     submitHandler: (form) ->
       queryString = $("#workplace_new").serialize()
       $.ajax
@@ -59,6 +55,33 @@
         data: queryString
         success: (msg) ->
           $("#mWorkplaceNew").modal 'hide'
+          location.reload()
+      false
+
+@workplace_edit_save = () ->
+  $("#workplace_edit").validate
+    rules:
+      workplace_id:
+        required: true
+      workplace_name:
+        required: true
+      workplace_room:
+        required: true
+    errorClass: "input_error"
+    errorElement: "em"
+    messages:
+      workplace_id: ""
+      workplace_name: ""
+      workplace_room: ""
+    submitHandler: (form) ->
+      queryString = $("#workplace_edit").serialize()
+      $.ajax
+        url: "/workplace/srv_workplace_edit_save"
+        type: "POST"
+        async: false
+        data: queryString
+        success: (msg) ->
+          $("#mWorkplaceEdit").modal 'hide'
           location.reload()
       false
 

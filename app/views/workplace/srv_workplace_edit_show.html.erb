@@ -23,12 +23,12 @@
               <div class="form-group">
                 <label for="workplace_room" class="col-sm-2 control-label">Помещение, кабинет</label>
                 <div class="col-sm-10">
-                  <%= select_tag(:rooms, options_for_select(@form_data[:rooms], @form_data[:workplace_edit].room_id) ) %>
+                  <%= select_tag(:workplace_room, options_for_select(@form_data[:rooms], @form_data[:workplace_edit].room_id) ) %>
                 </div>
               </div>
             </fieldset>
           <div class="modal-footer">
-            <button type="submit" class="btn btn-success" onclick="workplace_new_save()">Сохранить</button>
+            <button type="submit" class="btn btn-success" onclick="workplace_edit_save()">Сохранить</button>
             <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
           </div>
         </form>

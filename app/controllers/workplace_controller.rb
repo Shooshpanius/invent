@@ -33,6 +33,15 @@ class WorkplaceController < ApplicationController
     render nothing: true
   end
 
+  def srv_workplace_edit_save
+    Workplace.update(
+        params[:workplace_id],
+        name: 	params[:workplace_name],
+        room_id: 	params[:workplace_room]
+    )
+    render nothing: true
+  end
+
   def srv_workplace_delete
     begin
       Workplace.destroy(Workplace.find(params[:workplace_id]))
