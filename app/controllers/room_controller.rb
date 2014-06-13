@@ -4,8 +4,10 @@ class RoomController < ApplicationController
 
 
   def index
-
-
+    rooms = Room.all
+    @form_data = {
+        rooms: rooms
+    }
   end
 
 
