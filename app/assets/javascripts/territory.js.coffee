@@ -53,13 +53,11 @@ $(document).ready ->
       "zebra"
       "filter"
     ]
-
-
-    widgetOptions:
+    widgetOptions :
       filter_hideFilters: true
       filter_childRows: false
       filter_startsWith: false
 
   ).tablesorterPager container: $("#pager"), size: 20
-  return
+
 

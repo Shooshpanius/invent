@@ -8,14 +8,18 @@ body .modal-dialog {
 
 .tablesorter .tablesorter-filter-row td:nth-child(1n) .tablesorter-filter {
   width: 0px;
+  visibility: hidden;
 }
 .tablesorter .tablesorter-filter-row td:nth-child(2) .tablesorter-filter {
   width: 180px;
+  visibility: visible;
 }
 .tablesorter .tablesorter-filter-row td:nth-child(3n) .tablesorter-filter {
   width: 180px;
+  visibility: visible;
 }
 
 .tablesorter .tablesorter-filter-row td:nth-child(4n) .tablesorter-filter {
   width: 0px;
+  visibility: hidden;
 }
