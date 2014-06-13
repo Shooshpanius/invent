@@ -17,6 +17,13 @@ class WorkplaceController < ApplicationController
     render layout: false
   end
 
+  def srv_workplace_edit_show
+    @form_data = {
+        workplace_edit: Workplace.find(params[:workplace_id]),
+        rooms: Room.all.map { |room| [room.name, room.id] }
+    }
+    render layout: false
+  end
 
   def srv_workplace_new_save
     Workplace.create(
