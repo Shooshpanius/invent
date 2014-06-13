@@ -12,6 +12,16 @@
       $("#workplace_new_dialog").html msg
     false
 
+@workplace_edit_show = (workplace_id) ->
+  $.ajax
+    url: '/workplace/srv_workplace_edit_show'
+    type: 'POST'
+    async: false
+    data: {workplace_id: workplace_id}
+    success: (msg) ->
+      $("#workplace_edit_dialog").html msg
+    false
+
 @workplace_delete = (workplace_id) ->
   if confirm('Удалить рабочее место?')
     $.ajax
