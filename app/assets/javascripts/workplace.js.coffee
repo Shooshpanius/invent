@@ -21,6 +21,7 @@
       data: {workplace_id: workplace_id}
       success: (msg) ->
         alert(msg)
+        location.reload()
       false
 
 

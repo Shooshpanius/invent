@@ -21,6 +21,7 @@
       data: {room_id: room_id}
       success: (msg) ->
         alert(msg)
+        location.reload()
       false
 
 @room_new_save = () ->

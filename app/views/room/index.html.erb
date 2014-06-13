@@ -49,8 +49,8 @@
             <td><%= room.name %></td>
             <td><%= room.territory.name%></td>
             <td>
-              <a href="#" type="button" class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-edit"></i></a>
-              <a href="#" type="button" class="btn btn-danger btn-xs" onclick="room_delete(<%= room.id %>)"><i class="glyphicon glyphicon-trash"></i></a>
+              <button type="button" class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-edit"></i></button>
+              <button type="button" class="btn btn-danger btn-xs" onclick="room_delete(<%= room.id %>)"><i class="glyphicon glyphicon-trash"></i></button>
             </td>
           </tr>
       <% end %>

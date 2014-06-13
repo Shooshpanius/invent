@@ -31,6 +31,7 @@
       data: {territory_id: territory_id}
       success: (msg) ->
         alert(msg)
+        location.reload()
       false
 
 @territory_new_save = () ->

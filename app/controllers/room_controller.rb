@@ -1,3 +1,4 @@
+# encoding: utf-8
 class RoomController < ApplicationController
   before_filter :is_login
 
