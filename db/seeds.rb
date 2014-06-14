@@ -20,6 +20,9 @@ territory = Territory.create(
 )
 
 room = territory.rooms.create(
+    name: '---'
+)
 
-
+workplace = room.workplaces.create(
+    name: '---'
 )
