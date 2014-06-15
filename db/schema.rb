@@ -14,6 +14,10 @@
 ActiveRecord::Schema.define(version: 20140615174055) do
 
   create_table "cartridge_models", force: true do |t|
+    t.string   "model"
+    t.string   "model_code"
+    t.string   "comment"
+    t.integer  "resource"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

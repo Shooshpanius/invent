@@ -1,3 +1,5 @@
+# encoding: utf-8
+#
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
@@ -25,4 +27,18 @@ room = territory.rooms.create(
 
 workplace = room.workplaces.create(
     name: '---'
+)
+
+CartridgeModel.create(
+    model: 'CE285A',
+    model_code: '85A',
+    resource: 1600,
+    comment: 'комментарий'
+)
+
+CartridgeModel.create(
+    model: 'Q2612A',
+    model_code: '12A',
+    resource: 2000,
+    comment: 'комментарий'
 )
