@@ -9,7 +9,7 @@ class CartridgeController < ApplicationController
   def srv_cartridge_new_show
     @form_data = {
         rooms: Room.all.map { |room| [room.name, room.id] },
-        printers: Printer.all.map { |printer| [printer.name, printer.id] },
+        printers: Printer.all.map { |printer| [printer.inv_number + '(' + printer.printer_model.name + ')', printer.id] },
         cartridge_models: CartridgeModel.all.map { |model| [model.model, model.id] }
     }
     render layout: false

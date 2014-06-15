@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20140615174055) do
   end
 
   create_table "cartridges", force: true do |t|
+    t.string   "inv_number"
     t.integer  "room_id"
     t.integer  "printer_id"
     t.integer  "cartridge_model_id"
@@ -32,11 +33,15 @@ ActiveRecord::Schema.define(version: 20140615174055) do
   end
 
   create_table "printer_models", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "printers", force: true do |t|
+    t.string   "inv_number"
+    t.integer  "printer_model_id"
+    t.string   "comment"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
