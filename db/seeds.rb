@@ -29,6 +29,16 @@ workplace = room.workplaces.create(
     name: '---'
 )
 
+printer_model = PrinterModel.create(
+    name: '---'
+)
+
+printer_model.printers.create(
+    inv_number: '---',
+    comment: '---'
+
+)
+
 CartridgeModel.create(
     model: 'CE285A',
     model_code: '85A',
