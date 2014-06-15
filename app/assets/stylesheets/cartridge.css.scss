@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body .modal-dialog {
+  width: 750px;
+}
+
 .tablesorter .tablesorter-filter-row td:nth-child(1n) .tablesorter-filter {
   width: 0px;
   visibility: hidden;

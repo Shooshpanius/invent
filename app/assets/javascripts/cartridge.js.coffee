@@ -2,7 +2,15 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-
+@cartridge_new_show = () ->
+  $.ajax
+    url: '/cartridge/srv_cartridge_new_show'
+    type: 'POST'
+    async: false
+    data: {}
+    success: (msg) ->
+      $("#cartridge_new_dialog").html msg
+    false
 
 
 $(document).ready ->
