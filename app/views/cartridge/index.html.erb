@@ -1,2 +1,67 @@
-<h1>Cartridge#index</h1>
-<p>Find me in app/views/cartridge/index.html.erb</p>
+<%= stylesheet_link_tag "cartridge" %>
+<%= javascript_include_tag "main" %>
+<%= javascript_include_tag "cartridge" %>
+
+<div class="panel panel-info">
+
+  <div class="panel-heading">
+    <div class="panel-title">
+      Картриджи
+      <a class="btn btn-primary btn-sm pull-right" role="button" data-toggle="modal" data-target="#mCartridgeNew" onclick="cartridge_new_show()"><span class="glyphicon glyphicon-plus"></span></a>
+
+      <div id="pager" class="pager  pull-right" style="margin:0px; border:0px; padding:0px; width:700px;">
+        <form>
+          <%= image_tag "first.png", :class => "first" %>
+          <%= image_tag "prev.png", :class => "prev" %>
+          <input type="text" class="pagedisplay"/>
+          <%= image_tag "next.png", :class => "next" %>
+          <%= image_tag "last.png", :class => "last" %>
+          <select class="pagesize">
+            <option selected="selected"  value="20">20</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+            <option value="200">200</option>
+          </select> Rows
+        </form>
+      </div>
+
+    </div>
+    <div class="clearfix"></div>
+  </div>
+
+  <div class="panel-body">
+
+    <table class="table table-bordered table-condensed tablesorter" id="tbl_cartridges" name="tbl_cartridges">
+      <thead>
+
+      <tr>
+        <th class="first-name col-md-1">#</th>
+        <th data-placeholder="" class="filter-match col-md-2">Инв.номер</th>
+        <th data-placeholder="" class="filter-match col-md-2">Модель</th>
+        <th data-placeholder="" class="filter-match col-md-2">Помещение</th>
+        <th data-placeholder="" class="filter-match col-md-2">Принтер</th>
+        <th data-placeholder="" class="filter-match col-md-3">Комментарий</th>
+      </tr>
+
+      </thead>
+      <tbody>
+      <% @form_data[:cartridges].each.with_index do |cartridge, index| %>
+          <tr id="c_<%= cartridge.id %>">
+            <td><%= cartridge.id %></td>
+            <td><%= cartridge.name %></td>
+            <td><%= cartridge.territory.name%></td>
+            <td>
+              <button type="button" class="btn btn-primary btn-xs" onclick="cartridge_edit_show(<%= cartridge.id %>)" data-toggle="modal" data-target="#mCartridgeEdit"><i class="glyphicon glyphicon-edit"></i></button>
+              <button type="button" class="btn btn-danger btn-xs" onclick="cartridge_delete(<%= cartridge.id %>)"><i class="glyphicon glyphicon-trash"></i></button>
+            </td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+
+  </div>
+
+</div>
+
+<div id="cartridge_new_dialog"></div>
+<div id="cartridge_edit_dialog"></div>
