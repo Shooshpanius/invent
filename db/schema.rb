@@ -19,6 +19,10 @@ ActiveRecord::Schema.define(version: 20140615174055) do
   end
 
   create_table "cartridges", force: true do |t|
+    t.integer  "room_id"
+    t.integer  "printer_id"
+    t.integer  "cartridge_model_id"
+    t.string   "comment"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
