@@ -4,6 +4,7 @@ Invent::Application.routes.draw do
 
 
 
+  get "printer/index"
   get "cartridge/index"
   get "workplace/index"
   get "room/index"
@@ -14,6 +15,7 @@ Invent::Application.routes.draw do
   resources :room, :path => 'room/(:action)(:id)(.:format)'
   resources :workplace, :path => 'workplace/(:action)(:id)(.:format)'
   resources :cartridge, :path => 'cartridge/(:action)(:id)(.:format)'
+  resources :printer, :path => 'printer/(:action)(:id)(.:format)'
 
 
 
