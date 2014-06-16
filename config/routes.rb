@@ -4,6 +4,7 @@ Invent::Application.routes.draw do
 
 
 
+  get "cartridge_model/index"
   get "printer/index"
   get "cartridge/index"
   get "workplace/index"
@@ -16,6 +17,7 @@ Invent::Application.routes.draw do
   resources :workplace, :path => 'workplace/(:action)(:id)(.:format)'
   resources :cartridge, :path => 'cartridge/(:action)(:id)(.:format)'
   resources :printer, :path => 'printer/(:action)(:id)(.:format)'
+  resources :cartridge_model, :path => 'cartridge_model/(:action)(:id)(.:format)'
 
 
 

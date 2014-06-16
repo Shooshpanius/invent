@@ -1,0 +1,2 @@
+class CartridgeModelController < ApplicationController
+end
