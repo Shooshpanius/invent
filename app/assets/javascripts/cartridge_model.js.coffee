@@ -33,3 +33,48 @@
         alert(msg)
         location.reload()
       false
+
+@cartridge_model_new_save = () ->
+  $("#cartridge_model_new").validate
+    rules:
+      cartridge_model_model:
+        required: true
+    errorClass: "input_error"
+    errorElement: "em"
+    messages:
+      cartridge_model_model: ""
+    submitHandler: (form) ->
+      queryString = $("#cartridge_model_new").serialize()
+      $.ajax
+        url: "/cartridge_model/srv_cartridge_model_new_save"
+        type: "POST"
+        async: false
+        data: queryString
+        success: (msg) ->
+          $("#mCartridgeModelNew").modal 'hide'
+          location.reload()
+      false
+
+@cartridge_model_edit_save = () ->
+  $("#cartridge_model_edit").validate
+    rules:
+      cartridge_model_id:
+        required: true
+      cartridge_model_model:
+        required: true
+    errorClass: "input_error"
+    errorElement: "em"
+    messages:
+      cartridge_model_id: ""
+      cartridge_model_model: ""
+    submitHandler: (form) ->
+      queryString = $("#cartridge_model_edit").serialize()
+      $.ajax
+        url: "/cartridge_model/srv_cartridge_model_edit_save"
+        type: "POST"
+        async: false
+        data: queryString
+        success: (msg) ->
+          $("#mCartridgeModelEdit").modal 'hide'
+          location.reload()
+      false
