@@ -5,3 +5,28 @@
 body .modal-dialog {
   width: 750px;
 }
+
+.tablesorter .tablesorter-filter-row td:nth-child(1) .tablesorter-filter {
+  width: 0px;
+  visibility: hidden;
+}
+.tablesorter .tablesorter-filter-row td:nth-child(2) .tablesorter-filter {
+  width: 80px;
+  visibility: visible;
+}
+.tablesorter .tablesorter-filter-row td:nth-child(3) .tablesorter-filter {
+  width: 80px;
+  visibility: visible;
+}
+.tablesorter .tablesorter-filter-row td:nth-child(4) .tablesorter-filter {
+  width: 80px;
+  visibility: visible;
+}
+.tablesorter .tablesorter-filter-row td:nth-child(5) .tablesorter-filter {
+  width: 500px;
+  visibility: visible;
+}
+.tablesorter .tablesorter-filter-row td:nth-child(6) .tablesorter-filter {
+  width: 0px;
+  visibility: hidden;
+}
