@@ -1,0 +1,63 @@
+
+<div class="modal fade" id="mCartridgeEdit" tabindex="-1" role="dialog" aria-labelledby="mCartridgeEdit" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="mCartridgeEditLabel">Новый картридж</h4>
+      </div>
+      <div class="modal-body">
+
+        <form class="form-horizontal" role="form" id="cartridge_edit" name="cartridge_edit">
+            <fieldset>
+              <input type="hidden" class="form-control" id="cartridge_id" name="cartridge_id" value="<%= @form_data[:cartridge_edit].id %>">
+
+              <div class="form-group">
+                <label for="cartridge_inv_number" class="col-sm-2 control-label">Инв.номер</label>
+                <div class="col-sm-3">
+                  <input type="text" class="form-control" id="cartridge_inv_number" name="cartridge_inv_number" placeholder="Инв. номер" value="<%= @form_data[:cartridge_edit].inv_number %>">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="cartridge_model" class="col-sm-2 control-label">Модель</label>
+                <div class="col-sm-10">
+                  <%= select_tag(:cartridge_models, options_for_select(@form_data[:cartridge_models], @form_data[:cartridge_edit].cartridge_model_id) ) %>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="cartridge_room" class="col-sm-2 control-label">Помещение</label>
+                <div class="col-sm-10">
+                  <%= select_tag(:cartridge_room, options_for_select(@form_data[:rooms], @form_data[:cartridge_edit].room_id) ) %>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="cartridge_printer" class="col-sm-2 control-label">Принтер</label>
+                <div class="col-sm-10">
+                  <%= select_tag(:cartridge_printer, options_for_select(@form_data[:printers], @form_data[:cartridge_edit].printer_id) ) %>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="cartridge_comment" class="col-sm-2 control-label">Комментарий</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" id="cartridge_comment" name="cartridge_comment" placeholder="Комментарий" value="<%= @form_data[:cartridge_edit].comment %>">
+                </div>
+              </div>
+
+
+
+
+            </fieldset>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-success" onclick="cartridge_edit_save()">Сохранить</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div><
+</div>
