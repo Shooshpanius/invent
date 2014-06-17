@@ -12,6 +12,38 @@
       $("#cartridge_new_dialog").html msg
     false
 
+@cartridge_new_save = () ->
+  $("#cartridge_new").validate
+    rules:
+      cartridge_inv_number:
+        required: true
+      cartridge_model:
+        required: true
+      cartridge_room:
+        required: true
+      cartridge_printer:
+        required: true
+    errorClass: "input_error"
+    errorElement: "em"
+    messages:
+      cartridge_inv_number: ""
+      cartridge_model: ""
+      cartridge_room: ""
+      cartridge_printer: ""
+    submitHandler: (form) ->
+      queryString = $("#cartridge_new").serialize()
+      $.ajax
+        url: "/cartridge/srv_cartridge_new_save"
+        type: "POST"
+        async: false
+        data: queryString
+        success: (msg) ->
+          $("#mCartridgeNew").modal 'hide'
+          location.reload()
+      false
+
+
+
 
 $(document).ready ->
   $("#tbl_cartridges").tablesorter(

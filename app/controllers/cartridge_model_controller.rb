@@ -1,4 +1,8 @@
+# encoding: utf-8
 class CartridgeModelController < ApplicationController
+
+  before_filter :is_login
+
 
   def index
     @form_data = {
@@ -36,6 +40,24 @@ class CartridgeModelController < ApplicationController
         comment: 	params[:cartridge_model_comment]
     )
     render nothing: true
+  end
+
+  def srv_cartridge_model_delete
+    begin
+      CartridgeModel.destroy(CartridgeModel.find(params[:cartridge_model_id]))
+      render text: 'Запись удалена'
+    rescue ActiveRecord::DeleteRestrictionError => e
+      render text: 'Удаление невозможно, есть связанные объекты'
+    end
+  end
+
+
+
+  private
+  def is_login
+    if !session[:is_login]
+      redirect_to "/login"
+    end
   end
 
 end

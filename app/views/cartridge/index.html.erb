@@ -36,11 +36,12 @@
 
       <tr>
         <th class="first-name col-md-1">#</th>
-        <th data-placeholder="" class="filter-match col-md-2">Инв.номер</th>
-        <th data-placeholder="" class="filter-match col-md-2">Модель</th>
+        <th data-placeholder="" class="filter-match col-md-1">Инв.номер</th>
+        <th data-placeholder="" class="filter-match col-md-1">Модель</th>
         <th data-placeholder="" class="filter-match col-md-2">Помещение</th>
         <th data-placeholder="" class="filter-match col-md-2">Принтер</th>
-        <th data-placeholder="" class="filter-match col-md-3">Комментарий</th>
+        <th data-placeholder="" class="filter-match col-md-4">Комментарий</th>
+        <th class="filter-match col-md-1"></th>
       </tr>
 
       </thead>
@@ -48,8 +49,11 @@
       <% @form_data[:cartridges].each.with_index do |cartridge, index| %>
           <tr id="c_<%= cartridge.id %>">
             <td><%= cartridge.id %></td>
-            <td><%= cartridge.name %></td>
-            <td><%= cartridge.territory.name%></td>
+            <td><%= cartridge.inv_number %></td>
+            <td><%= cartridge.cartridge_model.model%></td>
+            <td><%= cartridge.printer.inv_number%></td>
+            <td><%= cartridge.room.name%></td>
+            <td><%= cartridge.comment%></td>
             <td>
               <button type="button" class="btn btn-primary btn-xs" onclick="cartridge_edit_show(<%= cartridge.id %>)" data-toggle="modal" data-target="#mCartridgeEdit"><i class="glyphicon glyphicon-edit"></i></button>
               <button type="button" class="btn btn-danger btn-xs" onclick="cartridge_delete(<%= cartridge.id %>)"><i class="glyphicon glyphicon-trash"></i></button>
